@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofoliu - Andrei Gabriel Păun</title>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    <header>
+        <div class="wrapper">
+            <div class="hero">
+                <div class="hero-panel">
+                    <div class="eyebrow">Portofoliu personal • Ingineria Calculatoarelor • Sibiu</div>
+                    <div class="avatar">
+                        <img id="avatar-img" src="https://avatars.githubusercontent.com/PaunAndreiGabriel" alt="Avatar GitHub">
+                        <div id="avatar-fallback" class="avatar-fallback hidden">👤</div>
+                    </div>
+                    <h1 id="profile-name">Andrei Gabriel Păun</h1>
+                    <p id="profile-role" class="role">Second-year Computer Engineering Student @ ULBS</p>
+                    <p id="profile-bio" class="bio">Student în anul II la Ingineria Calculatoarelor la ULBS, pasionat de dezvoltarea software și problem solving. Am o bază solidă în programare și tehnologii web, completată de experiență practică în customer service și lucru în echipă.</p>
+                    <div class="profile-links">
+                        <a class="icon-link" href="https://github.com/PaunAndreiGabriel" target="_blank" rel="noreferrer">GitHub</a>
+                        <a class="icon-link" href="https://www.linkedin.com/in/andrei-gabriel-paun-54556833a/" target="_blank" rel="noreferrer">LinkedIn</a>
+                        <a class="icon-link" href="mailto:andreigabriel.paun05@gmail.com">Email</a>
+                        <a class="button-link" href="CV_Paun_Andrei_Gabriel.pdf" download>Descarcă CV</a>
+                    </div>
+                </div>
+                <aside class="hero-aside">
+                    <div class="profile-note">
+                        <strong>Din CV</strong>
+                            <span>Ingineria Calculatoarelor, software development, problem solving și experiență practică în customer service.</span>
+                        </div>
+                        <div class="card">
+                            <div class="section-title">
+                                <h3>Educație</h3>
+                                <span>Formare</span>
+                            </div>
+                            <div class="timeline">
+                                <div>
+                                    <h4>Bachelor's Degree in Computer Engineering</h4>
+                                    <p class="muted">Universitatea „Lucian Blaga” din Sibiu (ULBS)</p>
+                                    <p class="muted">01/10/2024 - Prezent</p>
+                                </div>
+                                <div>
+                                    <h4>High School Diploma - Mathematics and Computer Science</h4>
+                                    <p class="muted">Colegiul Național „Gib Mihăescu", Drăgășani</p>
+                                    <p class="muted">14/09/2020 - 04/06/2024</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="metrics" aria-label="Rezumat profil">
+                        <div class="metric">
+                            <strong>Engleză</strong>
+                            B2 la listening, reading, writing și speaking
+                        </div>
+                        <div class="metric">
+                            <strong>Germană</strong>
+                            A1/A2 în toate competențele de bază
+                        </div>
+                        <div class="metric">
+                            <strong>Franceză</strong>
+                            A2 în toate competențele de bază
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrapper">
+            <section class="two-columns">
+            </section>
+
+            <section class="two-columns">
+                <article class="card">
+                    <div class="section-title">
+                        <h2>Competențe tehnice</h2>
+                        <span>Din secțiunea Skills din CV</span>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Programare și web</h3>
+                        <div class="tech-tags">
+                            <span>C++</span>
+                            <span>C#</span>
+                            <span>Java</span>
+                            <span>JavaScript</span>
+                            <span>PHP</span>
+                            <span>Python</span>
+                            <span>SQL</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Concepte și instrumente</h3>
+                        <div class="tech-tags">
+                            <span>OOP</span>
+                            <span>Web programming</span>
+                            <span>Algorithms</span>
+                            <span>Data structures</span>
+                            <span>Computer graphics</span>
+                            <span>Electronics</span>
+                            <span>IDE software</span>
+                            <span>Configuration management</span>
+                            <span>Microsoft Office</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="section-title">
+                        <h2>Competențe personale și limbi</h2>
+                        <span>Abilități practice din CV</span>
+                    </div>
+                    <div class="timeline">
+                        <div>
+                            <h3>Customer service și lucru în echipă</h3>
+                            <p>Asistarea clienților, recomandări de produse, operare casă/POS, prelucrarea plăților și lucru colaborativ într-un mediu dinamic.</p>
+                        </div>
+                        <div>
+                            <h3>Administrare și organizare</h3>
+                            <p>Gestionarea bazei de produse, urmărirea stocurilor, recepția mărfii, inventar și merchandising vizual.</p>
+                        </div>
+                        <div>
+                            <h3>Limbi</h3>
+                            <p>Română - limbă maternă; Engleză - B2; Germană - A1/A2; Franceză - A2.</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section>
+                <div class="section-title">
+                    <h2>Portofoliu GitHub</h2>
+                    <span>Repo-uri publice încărcate dinamic</span>
+                </div>
+
+                <div id="loading-state">Se încarcă proiectele...</div>
+
+                <div id="error-state" hidden>
+                    <p><strong>Eroare la încărcare.</strong></p>
+                    <p id="error-message"></p>
+                </div>
+
+                <div id="few-projects-notice" class="notice" hidden></div>
+
+                <div id="projects-container" class="projects-grid"></div>
+
+                <div class="load-more-wrap">
+                    <button id="load-more-btn" class="load-more-btn" hidden>Încarcă mai multe proiecte</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="wrapper">
+            <p>&copy; 2026 - Andrei Gabriel Păun. Proiect realizat pentru .</p>
+        </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
