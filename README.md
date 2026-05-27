@@ -1,60 +1,81 @@
-# Portofoliu Web
+# Portofoliu Web — Andrei Gabriel Păun
 
-Portofoliu personal cu profil, educație, experiență și portofoliu GitHub încărcat dinamic prin GitHub API.
+Pagina personală/portofoliu statică care afișează informații de profil, educație, competențe și un portofoliu generat din repo-urile publice GitHub.
 
-## Descriere
+## Funcționalități
 
-Aplicația afișează:
+- Secțiune Profil: nume, rol, descriere, poză și linkuri (GitHub, LinkedIn, email, CV)
+- Educație și competențe extrase din CV (fișier PDF inclus în proiect)
+- Portofoliu: carduri de proiect preluate din GitHub (repo public)
+- Fallback local de proiecte când API-ul nu este disponibil sau sunt limitări
 
-- secțiune de profil cu nume, rol, descriere și fotografie
-- tehnologii preferate și rezumat vizual al profilului
-- educație și experiență relevantă
-- carduri de proiect preluate din GitHub API
-- fallback local dacă API-ul nu răspunde sau există limită de cereri
-
-## Tehnologii folosite
+## Tehnologii
 
 - HTML5
-- CSS3 cu Grid și Flexbox
-- JavaScript vanilla
-- GitHub REST API
+- CSS3 (Grid, Flexbox)
+- Vanilla JavaScript (fetch + DOM)
+- GitHub REST API (public)
 
-## Rulare locală
+## Cerințe
 
-1. Deschide folderul proiectului în VS Code.
-2. Asigură-te că fișierul `CV_Paun_Andrei_Gabriel.pdf` este în rădăcina proiectului, dacă vrei ca butonul de CV să funcționeze.
-3. Deschide `index.html` sau `proiect.html` în browser.
+- Browser modern (Chrome, Edge, Firefox) cu JavaScript activat
+- Opțional: Python (sau alt server static) pentru servire locală (recomandat)
 
-## Publicare gratuită
+## Rulare locală (recomandat)
 
-Proiectul este pregătit pentru publicare statică pe platforme gratuite:
+1. Deschide un terminal în directorul proiectului.
+2. Pornește un server static (ex.: Python):
 
-### GitHub Pages
+```bash
+python -m http.server 8000
+```
 
-1. Încarcă fișierele în repository-ul GitHub.
-2. Setează branch-ul de publicare pe `main` sau `gh-pages`.
-3. Activează GitHub Pages din Settings > Pages.
-4. Folosește `index.html` ca pagină de start.
+3. Deschide în browser: http://localhost:8000/index.html
 
-### Vercel
+Notă: deschiderea fișierului direct (`file://.../index.html`) în unele browsere poate bloca cererile `fetch` din motive de securitate; folosește un server local.
 
-1. Importă repository-ul în Vercel.
-2. Nu este necesar build command pentru acest proiect static.
-3. Lasă root-ul proiectului și publică direct.
+## Limitări GitHub API și autentificare
 
-### Netlify
+GitHub aplică limite de rată pentru cererile anonime (60 cereri/oră per IP). Dacă întâmpini erori legate de rate limit (HTTP 403) sau `Failed to fetch`, ai două opțiuni:
 
-1. Importă repository-ul în Netlify.
-2. Setează folderul de publicare la rădăcina proiectului.
-3. Deploy-ul se face fără configurări suplimentare.
+1. Folosește pagina cu fallback — proiectele locale vor fi afișate automat.
+2. (Opțional) Folosește un Personal Access Token (PAT) pentru a mări limita. Creează un token pe GitHub (Settings → Developer settings → Personal access tokens) și adaugă-l temporar în `app.js` *doar local* astfel:
 
-## Structura fișierelor
+```js
+// Înainte de fetch
+const GITHUB_TOKEN = 'ghp_xxx_REPLACE_WITH_YOUR_TOKEN'; // NU comite acest token
 
-- `index.html` - intrarea principală pentru deploy
-- `proiect.html` - pagina principală a portofoliului
-- `README.md` - documentație și pași de rulare
+// Apoi folosește:
+fetch(url, { headers: { Authorization: `token ${GITHUB_TOKEN}` } })
+```
 
-## Observații
+Important: nu adăuga token-ul în repo public; folosește această metodă doar pentru dezvoltare locală.
 
-- Pagina citește repo-urile publice de pe GitHub pentru utilizatorul `PaunAndreiGabriel`.
-- Dacă GitHub API răspunde cu eroare sau limită de cereri, se afișează un fallback local cu proiecte de rezervă.
+## Structura proiectului
+
+- `index.html` — pagina principală (entry point)
+- `styles.css` — stiluri externe
+- `app.js` — logica JavaScript pentru preluare și afișare repo-uri
+- `CV_Paun_Andrei_Gabriel.pdf` — CV folosit ca sursă de conținut
+- `README.md` — documentație (acest fișier)
+
+## Deploy
+
+Poți publica proiectul pe orice serviciu static (GitHub Pages, Vercel, Netlify). Pentru GitHub Pages:
+
+1. Commit & push pe repository.
+2. În GitHub → Settings → Pages: setează branch-ul (`main`) și folderul (`/` sau `/docs`).
+3. Domeniul va fi generat automat (sau poți folosi un custom domain).
+
+## Contribuții
+
+Acest proiect este un portofoliu personal — contribuțiile sunt binevenite pentru îmbunătățiri stilistice sau bugfix-uri. Deschide un Issue sau Pull Request.
+
+## Contact
+
+- Email: andreigabriel.paun05@gmail.com
+- GitHub: https://github.com/PaunAndreiGabriel
+
+## Licență
+
+MIT — vezi fișierul `LICENSE` (dacă vrei, pot adăuga unul).
