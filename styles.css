@@ -504,6 +504,17 @@ footer {
         padding: 20px;
     }
 
+    .profile-note {
+        width: 100%;
+        border-radius: 20px;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    .profile-note span {
+        line-height: 1.55;
+    }
+
     .hero-panel {
         text-align: center;
     }
@@ -540,6 +551,10 @@ footer {
 
     .card {
         padding: 18px;
+    }
+
+    .profile-note {
+        padding: 12px 14px;
     }
 
     .repo-description,
