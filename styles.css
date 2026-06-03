@@ -427,13 +427,11 @@ main {
     pointer-events: none;
     mix-blend-mode: overlay;
     z-index: 0;
-    animation: slow-rotate 24s linear infinite;
+    /* animation disabled to remove background motion */
+    animation: none;
 }
 
-@keyframes slow-rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
+/* Removed slow-rotate keyframes since animation is disabled */
 
 /* Neon heading accent */
 .neon {
